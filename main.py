@@ -85,9 +85,19 @@ async def test(ctx, arg):
 
 
 # Slash Commands
-@bot.tree.command(name='hellobot', description='Replies with Hello')
+@bot.tree.command(name='blacklist', description='blacklist')
 async def hellocommand(interaction):
-    await interaction.response.send_message("555")
+    await interaction.response.send_message("```/md ผู้ที่โดน Blacklist จะไม่ถูกปลด จนกว่าจะจ่ายค่าปลดนะคะ ``````/md ประกาศ blacklist เบอร์ *** เนื่องจากกดเรียกเคสใน Warzone เป็นเวลา 1 ชั่วโมง ตั้งแต่เวลา 00.00 - 00.00 ค่าปลด blacklist 10,000 IC``````/md ประกาศ blacklist แก๊งค์ (ชื่อแก๊งค์) เนื่องจากใช้ความรุนแรงในเขตโรงพยาบาลเป็นเวลา 1 ชั่วโมง ตั้งแต่เวลา xx.xx - xx.xx ค่าปลด blacklist xxxx cm``````/md เจ้าของเบอร์ ****** หากยังกดเรียกเคสใน Warzone อีกครั้ง หมอจะขออนุญาต Blacklist นะคะ ``````/md หากมีการกดเรียกเคสใน Warzone อีกครั้ง หมอจะขออนุญาต Blacklist นะคะ```")
+
+
+@bot.tree.command(name='ประกาศ', description='ประกาศทั่วไป')
+async def hellocommand(interaction):
+    await interaction.response.send_message("```/md ประกาศ! ผู้ที่อยู่ในเขตรพ. เกิน 10 นาที ขอความร่วมมือออกจากพื้นที่ตอนนี้ด้วยค่ะ ``````/md ขออภัยในความล่าช้านะคะ เนื่องจากเคสค่อนข้างเยอะ โปรดรอสักครู่ค่ะ``````/md ผู้ที่ทำธุระในรพ.เสร็จเรียบร้อยแล้ว รบกวนออกจากพื้นที่ของรพ.ด้วยนะคะ ขอบคุณค่ะ ``````/md เคสที่โดน Blacklist จะไม่ได้รับการชุบจนกว่าจะจ่ายค่าปลดนะคะ``````/md หมอขออนุญาตออกเวร และงดรับเคสก่อนประเทศรี 15 นาทีนะคะ ดูแลตัวเองกันด้วยน้า``````/md ผู้ที่เข้ามาใช้บริการที่รพ. รบกวนเก็บรถเข้าการาจให้เรียบร้อยด้วยนะคะ``````/md หากหมอพบประชาชนใส่หน้ากากเข้ามาในรพ แจ้งแล้วไม่ถอด หมอขอปรับ 5,000 IC ทันทีนะคะ``````/md หากหมอพบประชาชนเข้าไปเปลี่ยนชุดในห้องเปลี่ยนชุดในรพ. หมอขอปรับโดยไม่ต้องเตือน เป็นเงิน 5,000 IC``````/md ประกาศ! ผู้ที่อยู่ใน Warzone ห้ามกดเรียกเคสโดยเด็ดขาด``````/md หมอจะออกเวรแล้วนะคะ ดูแลตัวเองกันด้วยน้าาา``````/md ประกาศ! ผู้ที่อยู่ใน กิจกรรมชิงธง ห้ามกดเรียกเคสโดยเด็ดขาด``````/md รบกวนเบอร์ xxxxx ติดต่อที่ห้องแจ้งคนสลบด้วยค่ะ``````รบกวนเบอร์ xxxxx ติดต่อที่ห้องแจ้งคนสลบด้วยค่ะ @Whitelist```")
+
+
+@bot.tree.command(name='highest', description='female')
+async def hellocommand(interaction):
+    await interaction.response.send_message('# แต่งหญิง Highest\n- ผิว : 19\n- หน้า : 31\n- สีตา : 1\n\n- ทรงผม : 514\n- สีผม 1 : 29\n- สีผม 2 : 29\n- คิ้ว : 0\n\n- เมคอัพ: 29\n- ความหนาเมคอัพ: 4\n- สีเมคอัพ 1 : 23\n- สีเมคอัพ 2 : 23\n\n- บลัชออน: 0\n- ความหนาบลัชออน: 3\n- สีบลัช: 23\n\n- ลิป: 1\n- ความหนาลิป: 6\n- สีลิป 1 : 23\n- สีลิป 2 : 23')
 
 
 @bot.tree.command(name='พิมพ์ตาม', description='พิมพ์ตามที่เราใส่')
@@ -103,7 +113,7 @@ async def namecommand(interaction, name : str):
 async def test1(interaction):
     emmbed = discord.Embed(title='Link', url="https://docs.google.com/spreadsheets/d/15Y3MvtGqrZkf9SzLRwJwOk5Z7xGs_ahyx_9Sq8V_CSQ/edit?usp=sharing", description='This is an embed that will show how to build an embed and the different components', color=0x66FFFF, timestamp= discord.utils.utcnow())
 
-    
+
     await interaction.response.send_message(embed = emmbed)
 
 
@@ -111,7 +121,7 @@ async def test1(interaction):
 
 @bot.tree.command(name='help', description='กฎหมอทั้งหมด')
 async def helpcommand(interaction):
-    emmbed = discord.Embed(title='Click Link', url='https://docs.google.com/spreadsheets/d/15Y3MvtGqrZkf9SzLRwJwOk5Z7xGs_ahyx_9Sq8V_CSQ/edit?gid=588131081#gid=588131081', 
+    emmbed = discord.Embed(title='Click Link', url='https://docs.google.com/spreadsheets/d/15Y3MvtGqrZkf9SzLRwJwOk5Z7xGs_ahyx_9Sq8V_CSQ/edit?gid=588131081#gid=588131081',
                            description='Bot Commands',
                            color=0x66FFFF,
                            timestamp= discord.utils.utcnow())
