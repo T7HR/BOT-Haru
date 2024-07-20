@@ -1,1 +1,1 @@
-# BOT-Haru
+# Haru Bot Discord Log
